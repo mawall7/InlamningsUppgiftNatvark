@@ -93,73 +93,11 @@ public class Main2 {
                                 }catch(IOException | InterruptedException e){
                                     IO.println("gick inte att skicak updatera till new user");
                                 }
-
                         }
-
-//
-//                        if (messageResult.startsWith("NEWUSER:")) {
-//                            String username = messageResult.substring(8);
-//                            ui.onUserJoined(username);
-//                        }
-
-
-
-
                     }
-
                 }
 
-
                     });
-
-
-
-
-            //kolla efter nya meddelanden i separat tråd
-//            Thread.startVirtualThread(() -> {
-//
-//                    while(true) {
-//                        String message = null;
-//                        try{
-//                            message = network.startListening();
-//                        }catch(IOException e){
-//                            IO.println("meddelandet mottogs inte korrekt i main.");
-//                        }
-//                        if(message != null) {
-//                            if (message.startsWith("NEWUSER:")) {
-//                                String username = message.substring(8);
-//                                ui.onUserJoined(username);
-//                                IO.println("user joined message");
-//                            }
-//                            if (message.startsWith("MSG")) {
-//                                ui.onGotMessage(message.substring("MSG:".length()));
-//                            }
-//
-//                            if (message.startsWith("EXIT:")) {
-//                                String username = message.substring(5);
-//                                ui.onUserExit(username);
-//                                if (network.getUserName().equals(username)) {
-//                                    try {
-//                                        network.leave();
-//                                        network.closeSocket();
-//                                    } catch (IOException e) {
-//                                        IO.println("error at exit");
-//                                    }
-//
-//                                    break;
-//                                }
-//                            }
-//                        }
-//                        else{
-//                            IO.println("Message was null");
-//                        }
-//                    }
-//            });
         };
-
-
-//        weatherWin win = new weatherWin();
-//        receiver rec = new receiver(win);
-//        rec.listen();
     }
 

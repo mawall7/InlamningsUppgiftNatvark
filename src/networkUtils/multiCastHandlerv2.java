@@ -24,8 +24,8 @@ public class multiCastHandlerv2 implements IMultiCastNetwork {
 
             try{
                 //wifi eller ethernet adress 192.168.1.68
-                NetworkInterface netIf = NetworkInterface.getByInetAddress(InetAddress.getByName("127.0.0.1"));
-                //NetworkInterface netIf = NetworkInterface.getByInetAddress(InetAddress.getByName("127.0.0.1"));
+                NetworkInterface netIf = NetworkInterface.getByInetAddress(InetAddress.getLocalHost());
+
                 socket = new MulticastSocket(null);
                 socket.setReuseAddress(true);
                 socket.bind(new InetSocketAddress(toPort));
@@ -35,21 +35,6 @@ public class multiCastHandlerv2 implements IMultiCastNetwork {
                 socket.setOption(StandardSocketOptions.IP_MULTICAST_LOOP, true); //gör att man kan ta emot sina egna paket
                 toSAdr = new InetSocketAddress(toAdr, toPort);
 
-
-//            Enumeration<NetworkInterface> nets = NetworkInterface.getNetworkInterfaces();
-//            while (nets.hasMoreElements()) {
-//                NetworkInterface ni = nets.nextElement();
-//                if (ni.isUp() && !ni.isLoopback()) {
-//                    netIf = ni;
-//                    break;
-//                }
-//            }
-
-                //netIf = NetworkInterface.getByInetAddress(InetAddress.getLocalHost());
-
-
-
-                //joinGroup(netIf);
             }
             catch(IOException e){
                 e.printStackTrace();
@@ -68,9 +53,6 @@ public class multiCastHandlerv2 implements IMultiCastNetwork {
             IO.println("joingroupmessag:" + joinMessage);
         }
 
-        //public void setUserListener(UserListener listener){
-            //this.listener = listener;
-        //}
 
         public void sendMessage(String message) throws IOException, InterruptedException{
             if(message.equals("quit")){
@@ -119,17 +101,3 @@ public class multiCastHandlerv2 implements IMultiCastNetwork {
 
 
 
-// t.ex. message = "NEWUSER:Alice"
-//                    if (message.startsWith("NEWUSER:")) {
-//String username = message.substring(8);
-//                        if (listener != null) listener.onUserJoined(username);
-//                    }
-//                            if(message.startsWith("EXIT:")){
-//String username = message.substring(5);
-//                        if (listener != null) listener.onUserExit(username);
-//                        if(username.equals(this.userName)){
-//        socket.leaveGroup(toSAdr,netIf);
-//closeSocket();
-//                            break;
-                                  //  }
-                                   // }

@@ -12,14 +12,9 @@ public class chatUI extends JFrame implements ActionListener, UserListener, ICha
     IMultiCastNetwork networkHandler;
     //ArrayList<String> currentUsers;
 
-//    // Skapa en DefaultListModel enklare att lägga till och ta bort i en textarea:
+ // Skapa en DefaultListModel enklare att lägga till och ta bort i en textarea:
     DefaultListModel<String> usersModel = new DefaultListModel<>();
-//
-//// Lägg till element i modellen
-//model.addElement("Alice");
-//model.addElement("Bob");
-//model.addElement("Charlie");
-//Dialog box vid start för användarnamn input
+
     JDialog dialog;
     JButton okButton;
     JTextField textField;
@@ -29,7 +24,6 @@ public class chatUI extends JFrame implements ActionListener, UserListener, ICha
     JButton bClose = new JButton("Koppla ner!");
     JPanel p = new JPanel();
     JTextArea tl = new JTextArea();
-    //JTextArea tr = new JTextArea();
     JPanel chatp = new JPanel();
     JTextField inpBox = new JTextField(100);
 
@@ -66,18 +60,6 @@ public class chatUI extends JFrame implements ActionListener, UserListener, ICha
     public void start(){
 
         showDialog();
-//        userName = JOptionPane.showInputDialog("Namn?:");
-//        JOptionPane.showMessageDialog(null, "chat öppnas för:" + userName);
-//        setTitle("Chat " + userName);
-//        networkHandler.setUserName(userName);
-//
-//        try {
-//
-//            networkHandler.joinGroup("NEWUSER:" + userName);
-//
-//        }catch(IOException | InterruptedException e){
-//            e.printStackTrace();
-//        }
 
     }
 
